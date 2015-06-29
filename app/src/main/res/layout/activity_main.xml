@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainActivityLayout"
+    tools:context=".MainActivity">
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/kenBurnsSplashScreenBg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/ss_red_bg" />
+
+    <ImageView
+        android:id="@+id/logoSplashScreenImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ss_red_blue" />
+
+    <TextView
+        android:id="@+id/statusTextSplashScreenTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logoSplashScreenImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp"
+        android:text="www.SmartService.kz" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="4dp"
+            android:text="Powered by '\n www.GrowIT.kz "
+            android:textSize="8sp" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/rsz_grow_it_logo" />
+    </LinearLayout>
+</RelativeLayout>

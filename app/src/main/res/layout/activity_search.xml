@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d5d5d5"
+    android:orientation="vertical"
+    tools:context="kz.growit.smartservice.Search">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/sliding_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/accent"
+        app:tabTextColor="#FFFFFF" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <EditText
+                android:id="@+id/searchQueryEditTextSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="@string/search_hint_ru"
+                android:maxLength="255"
+
+                android:textSize="@dimen/abc_text_size_small_material" />
+
+
+            <com.dd.CircularProgressButton
+                android:id="@+id/searchButtonSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                app:cpb_textComplete="@string/search_complete_ru"
+                app:cpb_textError="@string/search_error_ru"
+                app:cpb_textIdle="@string/search_ru" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.rey.material.widget.Spinner
+                android:id="@+id/categorySpinnerSearch"
+                style="@style/Material.Widget.Spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+
+            <com.rey.material.widget.Spinner
+                android:id="@+id/specializationSpinnerSearch"
+                style="@style/Material.Widget.Spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.rey.material.widget.Spinner
+                android:id="@+id/regionSpinnerSearch"
+                style="@style/Material.Widget.Spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+
+            <com.rey.material.widget.Spinner
+                android:id="@+id/citySpinnerSearch"
+                style="@style/Material.Widget.Spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="@android:color/white" />
+</LinearLayout>

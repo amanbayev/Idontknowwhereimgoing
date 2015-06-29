@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">SmartService</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_menu">MainMenu</string>
+    <string name="snackbar_action_close_ru">Закрыть</string>
+    <string name="no_internet_ru">Нет подключения к интернету</string>
+    <string name="connecting_to_server_ru">Соединение с сервером...</string>
+    <string name="loading_regions_ru">Загрузка областей РК...</string>
+    <string name="loading_categories_ru">Загрузка категорий и специализаций...</string>
+    <string name="add_request_intro_ru">Вы можете оставить заявку для специалистов с описанием задачи. Ваша заявка будет доставлена всем специалистам и они смогут связаться с Вами по указанному телефону.</string>
+    <string name="drawer_item_main_ru">Главная</string>
+    <string name="offer_service_intro_ru">Вы можете предложить свои услуги для других пользователей портала SmartService. Для этого Вам нужно заполнить небольшую форму, возможно Вы захотите добавить фотографии своих услуг (портфолио), а также контакты и местоположение на карте. Ваше объявление автоматически добавится в базу и будет доступно для всех пользователей.</string>
+    <string name="drawer_item_offer_request_ru">Предложить услугу</string>
+    <string name="drawer_item_find_request_ru">Найти услугу</string>
+    <string name="drawer_item_add_request_ru">Оставить заявку на услугу</string>
+    <string name="drawer_item_my_requests_ru">Мои заявки</string>
+    <string name="section_my_profile_ru">Мой профиль</string>
+    <string name="title_activity_offer_request">OfferRequest</string>
+    <string name="title_activity_login">Login</string>
+    <string name="username_text_ru">Номер телефона</string>
+    <string name="password_text_ru">Пароль</string>
+    <string name="login_button_ru">Войти</string>
+    <string name="register_button_ru">Регистрация</string>
+    <string name="cancel_button_ru">Отмена</string>
+    <string name="invalid_username_error_ru">неверный формат пароля (11 цифр номер телефона)</string>
+    <string name="and_ru">и</string>
+    <string name="invalid_password_error_ru">неверный формат пароля, от 6 до 30 символов</string>
+    <string name="error_ru">Ошибка:</string>
+    <string name="offer_service_button_ru">Предложить услугу</string>
+    <string name="add_request_buton_ru">Оставить заявку</string>
+    <string name="search_button_ru">Найти</string>
+    <string name="search_intro_ru">Вы можете просмотреть список всех объявлений об услугах через удобную систему фильтров.</string>
+    <string name="title_activity_add_request">AddRequestActivity</string>
+    <string name="name_hint_ru">Ваше имя</string>
+    <string name="phone_hint_ru">Номер телефона для связи</string>
+    <string name="email_hint_ru">Адрес электронной почты для связи</string>
+    <string name="category_ru">Категория</string>
+    <string name="specialization_ru">Специализация</string>
+    <string name="region_ru">Область</string>
+    <string name="city_ru">Город</string>
+    <string name="request_hint_ru">Описание задачи: </string>
+    <string name="request_2_hint_ru">(например, нужен хороший репетитор английского)</string>
+    <string name="complete_status_ru">Заявка подана! Закрыть окно.</string>
+    <string name="error_status_ru">Ошибка отправки данных на сервер =(</string>
+    <string name="phone_too_short_ru">Номер телефона (77019996633)</string>
+    <string name="email_format_error_ru">Неверный формат e-mail адреса</string>
+    <string name="name_too_short_ru">Слишком короткое имя!</string>
+    <string name="request_too_short_ru">Описание заявки менее 10 символов!!! Введите больше деталей!</string>
+    <string name="title_activity_search">Search</string>
+    <string name="search_hint_ru">Введите слова для поиска...</string>
+    <string name="search_complete_ru">Готово!</string>
+    <string name="search_error_ru">=(</string>
+    <string name="search_ru">Поиск</string>
+    <string name="map_ru">На карте</string>
+    <string name="search_outro_ru">Поиск завершен! Для повторного поиска нажмите на зеленую кпопку.</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

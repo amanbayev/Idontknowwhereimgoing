@@ -1,0 +1,179 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d5d5d5"
+    tools:context="kz.growit.smartservice.AddRequestActivity">
+
+    <include
+        android:id="@+id/toolbarAddRequest"
+        layout="@layout/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarAddRequest"
+        android:layout_marginBottom="60dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/CardViewAddRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardBackgroundColor="#ffffff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_request_intro_ru"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/nameAddRequest"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/name_hint_ru"
+                        android:singleLine="true"
+                        android:textColorHint="@color/accent"
+                        android:textSize="@dimen/abc_text_size_body_2_material" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/phoneAddRequest"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/phone_hint_ru"
+                        android:inputType="numberDecimal"
+                        android:maxLength="11"
+                        android:singleLine="true"
+                        android:textColorHint="@color/accent"
+                        android:textSize="@dimen/abc_text_size_body_2_material" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/emailAddRequest"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email_hint_ru"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:textColorHint="@color/accent"
+                        android:textSize="@dimen/abc_text_size_body_2_material"
+                        app:et_autoCompleteMode="multi" />
+                </android.support.design.widget.TextInputLayout>
+
+                <EditText
+                    android:id="@+id/requestAddRequest"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:hint="@string/request_hint_ru"
+                    android:inputType="textMultiLine"
+                    android:lines="6"
+                    android:singleLine="false"
+                    android:textAlignment="textStart"
+                    android:textColorHint="@color/accent"
+                    android:textSize="@dimen/abc_text_size_body_2_material" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/category_ru" />
+
+                <com.rey.material.widget.Spinner
+                    android:id="@+id/categorySpinnerAddRequest"
+                    style="@style/Material.Widget.Spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/specialization_ru" />
+
+                <com.rey.material.widget.Spinner
+                    android:id="@+id/specializationSpinnerAddRequest"
+                    style="@style/Material.Widget.Spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/region_ru" />
+
+                <com.rey.material.widget.Spinner
+                    android:id="@+id/regionSpinnerAddRequest"
+                    style="@style/Material.Widget.Spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/city_ru" />
+
+                <com.rey.material.widget.Spinner
+                    android:id="@+id/citySpinnerAddRequest"
+                    style="@style/Material.Widget.Spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </ScrollView>
+
+    <com.dd.CircularProgressButton
+        android:id="@+id/addButtonAddRequest"
+        android:layout_width="fill_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:background="@drawable/my_button"
+        android:text="@string/add_request_buton_ru"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cpb_textComplete="@string/complete_status_ru"
+        app:cpb_textError="@string/error_status_ru"
+        app:cpb_textIdle="@string/add_request_buton_ru" />
+
+</RelativeLayout>
