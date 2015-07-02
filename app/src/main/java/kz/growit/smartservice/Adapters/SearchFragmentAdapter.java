@@ -24,22 +24,31 @@ public class SearchFragmentAdapter extends RecyclerView.Adapter<SearchResultView
     }
 
     public SearchFragmentAdapter getInstance(Context context) {
-        SearchFragmentAdapter sfa = new SearchFragmentAdapter();
-        sfa.context = context;
-        return sfa;
+//        SearchFragmentAdapter sfa = new SearchFragmentAdapter();
+//        sfa.context = context;
+        this.context = context;
+        //AppController.getInstance().setSfa(sfa);
+        return this;
     }
 
     @Override
     public SearchResultViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.search_result_recycler_view_item_row, parent, false);
+
         return new SearchResultViewHolder(view);
+    }
+
+    public void setSearchResults(){
+        this.results = AppController.getInstance().getRecentSearch();
+        this.notifyItemRangeChanged(0,results.size());
+        this.notifyDataSetChanged();
     }
 
     @Override
     public void onBindViewHolder(SearchResultViewHolder holder, int position) {
         SearchResultItem item = results.get(position);
-        holder.thumb.setImageUrl(item.getProfileImageUrl(), AppController.getInstance().getImageLoader());
+        holder.thumb.setImageUrl("http://smartservice.kz/"+item.getProfileImageUrl(), AppController.getInstance().getImageLoader());
         for (int i = 0; i < item.getRating(); i++) {
             holder.stars.get(i).setImageDrawable(context.getResources().getDrawable(R.drawable.star));
         }

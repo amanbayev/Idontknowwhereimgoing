@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+import kz.growit.smartservice.Fragments.MyMapFragment;
 import kz.growit.smartservice.Fragments.SearchResultsRecyclerViewFragment;
 import kz.growit.smartservice.PageFragment;
 import kz.growit.smartservice.R;
@@ -20,7 +21,7 @@ public class FragmentPagerAdapter extends android.support.v4.app.FragmentPagerAd
         super(fm);
         this.context = context;
         tabTitles = new String[]{
-                context.getResources().getString(R.string.search_ru),
+                context.getResources().getString(R.string.list_ru),
                 context.getResources().getString(R.string.map_ru)};
     }
 
@@ -29,7 +30,7 @@ public class FragmentPagerAdapter extends android.support.v4.app.FragmentPagerAd
         if (position == 0)
             return SearchResultsRecyclerViewFragment.newInstance();
         else
-            return PageFragment.newInstance(0);
+            return PageFragment.newInstance(1);
     }
 
     @Override

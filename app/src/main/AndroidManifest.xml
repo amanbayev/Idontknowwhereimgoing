@@ -40,6 +40,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCVA5Rerk4DzuZb63MABJnzM-WWRHtQm9g" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <receiver
             android:name=".Utils.GCMBroadcastReciever"
@@ -82,6 +85,30 @@
         <activity
             android:name=".Search"
             android:label="@string/title_activity_search" >
+        </activity>
+        <activity
+            android:name=".SearchWithRightDrawer"
+            android:label="@string/title_activity_search_with_right_drawer" >
+        </activity>
+        <activity
+            android:name=".LargeButtons"
+            android:label="@string/title_activity_large_buttons" >
+        </activity>
+        <activity
+            android:name=".SearchNewDesign"
+            android:label="@string/title_activity_search_new_design" >
+        </activity>
+        <activity
+            android:name=".SelectRegion"
+            android:label="@string/title_activity_select_region" >
+        </activity>
+        <activity
+            android:name=".SelectCity"
+            android:label="@string/title_activity_select_city" >
+        </activity>
+        <activity
+            android:name=".ProfileDetailView"
+            android:label="@string/title_activity_profile_detail_view" >
         </activity>
     </application>
 

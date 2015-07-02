@@ -209,7 +209,7 @@ public class Search extends AppCompatActivity {
                 "&CityId=" + selectedCitId +
                 "&RegionId=" + selectedRegId +
                 "&ServiceCategoryId=" + selectedCatId;
-        url = "http://smartservice.kz/api/UserProfilesApi/SearchUserProfiles?SearchQuery=&CityId=1&RegionId=1&ServiceCategoryId=19";
+        //url = "http://smartservice.kz/api/UserProfilesApi/SearchUserProfiles?SearchQuery=&CityId=1&RegionId=1&ServiceCategoryId=19";
         JSONObject params = new JSONObject();
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET,
@@ -231,8 +231,7 @@ public class Search extends AppCompatActivity {
                         if (AppController.getInstance().getRecentSearch() != null)
                             searchButton.setProgress(100);
                         AppController.getInstance().setRecentSearch(searchResults);
-                        android.support.v7.widget.RecyclerView recyclerView = (android.support.v7.widget.RecyclerView) viewPager.findViewById(R.id.recyclerViewSearchFragmentTwo);
-                        recyclerView.getAdapter().notifyDataSetChanged();
+                        AppController.getInstance().getSfa().setSearchResults();
                         // no layout manager error!
 
 

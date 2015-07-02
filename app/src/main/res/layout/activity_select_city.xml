@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="kz.growit.smartservice.SelectRegion">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarSelectCity"
+        android:layout_width="fill_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:title="@string/select_city_ru"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <ListView
+        android:id="@+id/cityListViewSelectCity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

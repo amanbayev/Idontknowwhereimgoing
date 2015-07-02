@@ -2,4 +2,5 @@
 <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/recyclerViewSearchFragmentTwo"
     android:layout_width="match_parent"
+    android:background="#d5d5d5"
     android:layout_height="wrap_content" />

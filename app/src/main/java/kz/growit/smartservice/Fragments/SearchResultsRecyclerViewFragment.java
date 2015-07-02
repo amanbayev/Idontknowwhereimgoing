@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import kz.growit.smartservice.Adapters.SearchResultRecyclerViewItemAdapter;
+import kz.growit.smartservice.Adapters.SearchFragmentAdapter;
 import kz.growit.smartservice.AppController;
 import kz.growit.smartservice.R;
 
@@ -90,6 +90,7 @@ public class SearchResultsRecyclerViewFragment extends android.support.v4.app.Fr
 
     private void bindDataToAdapter() {
         // Bind adapter to recycler view object
-        recyclerView.setAdapter(new SearchResultRecyclerViewItemAdapter(getActivity().getApplicationContext(), AppController.getInstance().getRecentSearch()));
+        AppController.getInstance().setSfa(new SearchFragmentAdapter().getInstance(getActivity().getApplicationContext()));
+        recyclerView.setAdapter(AppController.getInstance().getSfa());
     }
 }

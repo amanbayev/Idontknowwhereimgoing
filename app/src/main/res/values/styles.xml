@@ -17,6 +17,12 @@
         <item name="colorControlHighlight">@color/accent</item>
     </style>
 
+    <style name="ExpandedTitleToolbar">
+        <item name="android:textColor">#336699</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="FullScreen" parent="@style/AppTheme">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>

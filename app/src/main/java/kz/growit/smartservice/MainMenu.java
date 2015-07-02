@@ -45,7 +45,7 @@ public class MainMenu extends AppCompatActivity {
         }
 
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarMainMenu);
-        collapsingToolbar.setTitle("SmartService.KZ");
+        collapsingToolbar.setTitle("SmartService.kz");
 
         drawer = AppController.getInstance().getDrawer(MainMenu.this, toolbar);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerViewMainMenu);

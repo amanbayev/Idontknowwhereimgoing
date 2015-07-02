@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.RelativeLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,22 +15,20 @@ import com.android.volley.toolbox.Volley;
 import com.lid.lib.LabelView;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+import kz.growit.smartservice.Adapters.SearchFragmentAdapter;
 import kz.growit.smartservice.Models.City;
 import kz.growit.smartservice.Models.Region;
 import kz.growit.smartservice.Models.SearchResultItem;
@@ -49,13 +46,64 @@ public class AppController extends Application {
     private ArrayList<SearchResultItem> recentSearch;
     private Boolean isLoggedIn;
     private JSONObject token;
+    private SearchFragmentAdapter sfa;
     private ImageLoader mImageLoader;
     private String regid;
     public static final String TAG = AppController.class.getSimpleName();
     private HashMap<Integer, Region> regions;
     private HashMap<Integer, ServiceCategory> categories;
+    private int selectedRegionId = 1, selectedCityId = 1, selectedCategoryId = 1, selectedSpecializationId = 14;
 
     ////////////////////////////////////////////////
+    public String getCity(int regionId, int cityId) {
+        ArrayList<City> temp = getCitiesForRegion(regionId);
+        for (int i = 0; i < temp.size(); i++) {
+            if (temp.get(i).getId() == cityId)
+                return temp.get(i).getDescription();
+        }
+        return "";
+    }
+
+    public int getSelectedSpecializationId() {
+        return selectedSpecializationId;
+    }
+
+    public void setSelectedSpecializationId(int selectedSpecializationId) {
+        this.selectedSpecializationId = selectedSpecializationId;
+    }
+
+    public int getSelectedCategoryId() {
+        return selectedCategoryId;
+    }
+
+    public void setSelectedCategoryId(int selectedCategoryId) {
+        this.selectedCategoryId = selectedCategoryId;
+    }
+
+    public int getSelectedRegionId() {
+        return selectedRegionId;
+    }
+
+    public void setSelectedRegionId(int selectedRegionId) {
+        this.selectedRegionId = selectedRegionId;
+    }
+
+    public int getSelectedCityId() {
+        return selectedCityId;
+    }
+
+    public void setSelectedCityId(int selectedCityId) {
+        this.selectedCityId = selectedCityId;
+    }
+
+    public SearchFragmentAdapter getSfa() {
+        return sfa;
+    }
+
+    public void setSfa(SearchFragmentAdapter sfa) {
+        this.sfa = sfa;
+    }
+
     public ArrayList<Region> getRegionsArray() {
         ArrayList<Region> response = new ArrayList<>();
         if (regions != null) {

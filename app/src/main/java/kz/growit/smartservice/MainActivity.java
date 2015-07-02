@@ -45,10 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         status = (TextView) findViewById(R.id.statusTextSplashScreenTextView);
 
-
-
-
-
         ConnectivityManager cm = (ConnectivityManager) getApplicationContext()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -84,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
                                         new Runnable() {
                                             @Override
                                             public void run() {
-                                                Intent goToMainMenu = new Intent(MainActivity.this, MainMenu.class);
-                                                startActivity(goToMainMenu);
+                                                Intent goToLargeButtons = new Intent(MainActivity.this, LargeButtons.class);
+                                                goToLargeButtons.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                startActivity(goToLargeButtons);
                                                 finish();
                                             }
                                         },
