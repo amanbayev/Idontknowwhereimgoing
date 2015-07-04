@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -100,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
             );
+            jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(5000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
             AppController.getInstance().addToRequestQueue(jsonObjectRequest,"init");
         } else {
             Snackbar

@@ -19,6 +19,7 @@
         android:layout_above="@+id/cardView"
         android:layout_below="@+id/toolbarLargeButtons"
         android:orientation="vertical"
+        android:layout_margin="4dp"
         android:weightSum="2">
 
         <LinearLayout
@@ -32,9 +33,9 @@
                 android:id="@+id/addRequestLargeButtonLL"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="8dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:background="#ffd3e102"
+                android:background="#ffff9000"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -53,14 +54,15 @@
                     android:layout_gravity="center_horizontal"
                     android:text="@string/add_request_buton_ru"
                     android:textAllCaps="true"
-                    android:textColor="#ffffff" />
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/offerServiceLargeButtonLL"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="8dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="#ff5537ff"
                 android:gravity="center"
@@ -81,7 +83,8 @@
                     android:layout_gravity="center_horizontal"
                     android:text="@string/offer_service_button_ru"
                     android:textAllCaps="true"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
@@ -97,9 +100,9 @@
                 android:id="@+id/searchLargeButtonLL"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="8dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:background="#ffff5e56"
+                android:background="#ffd51200"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -118,16 +121,17 @@
                     android:layout_gravity="center_horizontal"
                     android:text="@string/search_ru"
                     android:textAllCaps="true"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/myProfileLargeButtonLL"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="8dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:background="#ff13ff50"
+                android:background="#ff047900"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -146,7 +150,8 @@
                     android:layout_gravity="center_horizontal"
                     android:text="@string/section_my_profile_ru"
                     android:textAllCaps="true"
-                    android:textColor="#ffffff" />
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -156,13 +161,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         app:cardElevation="4dp">
 
         <TextView
             android:id="@+id/footerText"
             android:layout_width="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
             android:layout_height="wrap_content"
-            android:text="TEST TEXT" />
+            android:text="SmartService.kz (c) 2015 Все права защищены" />
     </android.support.v7.widget.CardView>
 </RelativeLayout>

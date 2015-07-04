@@ -1,6 +1,7 @@
 package kz.growit.smartservice;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.NetworkImageView;
 import com.mikepenz.materialdrawer.Drawer;
 import com.rey.material.widget.Spinner;
 import com.rey.material.widget.EditText;
@@ -68,7 +70,6 @@ public class SearchNewDesign extends AppCompatActivity {
 
         SelectedRegionId = myApp.getSelectedRegionId();
         SelectedCityId = myApp.getSelectedCityId();
-        SelectedCategoryId = myApp.getSelectedCategoryId();
 
         cityName = (TextView) findViewById(R.id.cityNewDesignSelectorTextView);
         regionName = (TextView) findViewById(R.id.regionNewDesignSelectorTextView);
@@ -79,7 +80,7 @@ public class SearchNewDesign extends AppCompatActivity {
         if (SelectedCityId > 0) {
             String region = myApp.getRegions().get(SelectedRegionId).getDescription();
             String city = myApp.getCity(SelectedRegionId, SelectedCityId);
-            Snackbar.make(toolbar, region + " and " + city, Snackbar.LENGTH_LONG).show();
+            //Snackbar.make(toolbar, region + " and " + city, Snackbar.LENGTH_LONG).show();
             cityName.setText(city);
             regionName.setText(region);
         }
@@ -112,10 +113,12 @@ public class SearchNewDesign extends AppCompatActivity {
             public boolean onItemClick(Spinner spinner, View view, int i, long l) {
                 SelectedCategoryId = kats.get(i).getId();
                 myApp.setSelectedCategoryId(SelectedCategoryId);
-                Snackbar.make(regionSelector, String.valueOf(SelectedCategoryId), Snackbar.LENGTH_SHORT).show();
+                //Snackbar.make(regionSelector, String.valueOf(SelectedCategoryId), Snackbar.LENGTH_SHORT).show();
                 return true;
             }
         });
+        SelectedCategoryId = kats.get(0).getId();
+        myApp.setSelectedCategoryId(SelectedCategoryId);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,6 +129,8 @@ public class SearchNewDesign extends AppCompatActivity {
             }
         });
 
+        searchQuery.clearFocus();
+
         searchResultsLV = (ListView) findViewById(R.id.searchResultsListView);
         searchResultsLV.setDividerHeight(0);
         myAdapter = new SearchResultsListViewAdapter(SearchNewDesign.this, myApp.getRecentSearch());
@@ -133,9 +138,19 @@ public class SearchNewDesign extends AppCompatActivity {
         searchResultsLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                SearchResultItem sri = myApp.getRecentSearch().get(position);
-                Snackbar.make(view, sri.getNameSurname(), Snackbar.LENGTH_LONG).show();
-
+                Drawable drawable;
+                NetworkImageView thumb = (NetworkImageView) view.findViewById(R.id.thumbnailSearchItemRow);
+                try {
+                    drawable = thumb.getDrawable();
+                    myApp.setProfileDrawable(drawable);
+                } catch (NullPointerException e) {
+                    e.printStackTrace();
+                }
+                //Snackbar.make(view, sri.getNameSurname(), Snackbar.LENGTH_LONG).show();
+                Intent goToProfileDetailView = new Intent(SearchNewDesign.this, ProfileDetailView.class);
+                myApp.setSelectedProfileId(myApp.getRecentSearch().get(position).getId());
+                goToProfileDetailView.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(goToProfileDetailView);
             }
         });
     }

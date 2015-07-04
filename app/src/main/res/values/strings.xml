@@ -69,4 +69,14 @@
     <string name="select_city_ru">Выбор города</string>
     <string name="more_info_button">Показать профиль</string>
     <string name="title_activity_profile_detail_view">ProfileDetailView</string>
+    <string name="services_ru">Услуги</string>
+    <string name="photos_ru">Фотографии</string>
+    <string name="more_info_ru">Дополнительная информация</string>
+    <string name="about_profile_ru">О себе</string>
+    <string name="languages_ru">Языки</string>
+    <string name="experience_ru">Опыт работы:</string>
+    <string name="show_phone_ru">Показать телефон</string>
+    <string name="show_reviews_ru">Показать отзывы</string>
+    <string name="show_pictures_ru">Показать фотографии</string>
+    <string name="title_activity_show_ratings">ShowRatings</string>
 </resources>

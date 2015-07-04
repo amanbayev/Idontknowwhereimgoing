@@ -13,6 +13,8 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- if you want to load images from a file OR from the internet -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <permission
         android:name="kz.growit.smartservice.permission.C2D_MESSAGE"
@@ -109,6 +111,10 @@
         <activity
             android:name=".ProfileDetailView"
             android:label="@string/title_activity_profile_detail_view" >
+        </activity>
+        <activity
+            android:name=".ShowRatings"
+            android:label="@string/title_activity_show_ratings" >
         </activity>
     </application>
 

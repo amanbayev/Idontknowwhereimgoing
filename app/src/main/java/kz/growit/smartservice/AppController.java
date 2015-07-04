@@ -3,6 +3,7 @@ package kz.growit.smartservice;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
@@ -34,6 +35,7 @@ import kz.growit.smartservice.Models.Region;
 import kz.growit.smartservice.Models.SearchResultItem;
 import kz.growit.smartservice.Models.ServiceCategory;
 import kz.growit.smartservice.Models.Specialization;
+import kz.growit.smartservice.Models.UserReview;
 import kz.growit.smartservice.Utils.LruBitmapCache;
 
 /**
@@ -42,6 +44,7 @@ import kz.growit.smartservice.Utils.LruBitmapCache;
 public class AppController extends Application {
     private static AppController mInstance;
     private RequestQueue mRequestQueue;
+    private Drawable profileDrawable;
     private String language = "ru";
     private ArrayList<SearchResultItem> recentSearch;
     private Boolean isLoggedIn;
@@ -53,8 +56,28 @@ public class AppController extends Application {
     private HashMap<Integer, Region> regions;
     private HashMap<Integer, ServiceCategory> categories;
     private int selectedRegionId = 1, selectedCityId = 1, selectedCategoryId = 1, selectedSpecializationId = 14;
+    private int selectedProfileId;
+    private ArrayList<UserReview> selectedUserReviews;
 
     ////////////////////////////////////////////////
+
+
+    public ArrayList<UserReview> getSelectedUserReviews() {
+        return selectedUserReviews;
+    }
+
+    public void setSelectedUserReviews(ArrayList<UserReview> selectedUserReviews) {
+        this.selectedUserReviews = selectedUserReviews;
+    }
+
+    public int getSelectedProfileId() {
+        return selectedProfileId;
+    }
+
+    public void setSelectedProfileId(int selectedProfileId) {
+        this.selectedProfileId = selectedProfileId;
+    }
+
     public String getCity(int regionId, int cityId) {
         ArrayList<City> temp = getCitiesForRegion(regionId);
         for (int i = 0; i < temp.size(); i++) {
@@ -62,6 +85,14 @@ public class AppController extends Application {
                 return temp.get(i).getDescription();
         }
         return "";
+    }
+
+    public Drawable getProfileDrawable() {
+        return profileDrawable;
+    }
+
+    public void setProfileDrawable(Drawable profileDrawable) {
+        this.profileDrawable = profileDrawable;
     }
 
     public int getSelectedSpecializationId() {
