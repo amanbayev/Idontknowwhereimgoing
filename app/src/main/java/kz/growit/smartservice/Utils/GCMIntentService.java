@@ -67,14 +67,14 @@ public class GCMIntentService extends IntentService {
         //NotificationCompat.InboxStyle myStyle = new NotificationCompat.InboxStyle();
 
         builder = new NotificationCompat.Builder(this)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ss_symbol))
-                .setContentTitle("SS:" + msg)
                 .setSmallIcon(R.drawable.ss_symbol)
+                .setContentTitle(msg)
+                .setTicker(msg)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setGroup("SmartService.KZ")
+                .setContentTitle("SmartService.KZ")
                 .setContentText(msg)
                 .setWhen(date.getTime())
-                .setStyle(new NotificationCompat.BigPictureStyle())
                 .setAutoCancel(true);
 
         builder.setContentIntent(contentIntent);

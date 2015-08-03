@@ -1,0 +1,870 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context="kz.growit.smartservice.SelectCategoryActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarLargeButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_one_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat1" />
+
+                        <TextView
+                            android:id="@+id/cat_one_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_one_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 1"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_six_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat6" />
+
+                        <TextView
+                            android:id="@+id/cat_six_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_six_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 6"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_seven_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat7" />
+
+                        <TextView
+                            android:id="@+id/cat_seven_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_seven_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 7"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_nineteen_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat19" />
+
+                        <TextView
+                            android:id="@+id/cat_nineteen_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/cat_nineteen_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 19"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 2nd row -->>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginStart="4dp"
+
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_20_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat20" />
+
+                        <TextView
+                            android:id="@+id/cat_20_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_20_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 20"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_21_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat21" />
+
+                        <TextView
+                            android:id="@+id/cat_21_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_21_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 21"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory7"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_22_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat22" />
+
+                        <TextView
+                            android:id="@+id/cat_22_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_22_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 22"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory8"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_23_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat23" />
+
+                        <TextView
+                            android:id="@+id/cat_23_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_23_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 23"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- 3rd row -->>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginStart="4dp"
+
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory9"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_24_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat24" />
+
+                        <TextView
+                            android:id="@+id/cat_24_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_24_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 24"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory10"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_25_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat25" />
+
+                        <TextView
+                            android:id="@+id/cat_25_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_25_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 25"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory11"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_26_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat26" />
+
+                        <TextView
+                            android:id="@+id/cat_26_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_26_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 26"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory12"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_27_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat27" />
+
+                        <TextView
+                            android:id="@+id/cat_27_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_27_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 27"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 4th row -->>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory13"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_28_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat28" />
+
+                        <TextView
+                            android:id="@+id/cat_28_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_28_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 28"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory14"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_29_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat29" />
+
+                        <TextView
+                            android:id="@+id/cat_29_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_29_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 29"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory15"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_30_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cat30" />
+
+                        <TextView
+                            android:id="@+id/cat_30_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_30_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category 30"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/badgeCategory16"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cat_all_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerInParent="true"
+
+                            android:scaleType="fitXY"
+                            android:src="@drawable/magnifier12" />
+
+                        <TextView
+                            android:id="@+id/cat_all_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cat_all_image"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:lines="1"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Category All"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

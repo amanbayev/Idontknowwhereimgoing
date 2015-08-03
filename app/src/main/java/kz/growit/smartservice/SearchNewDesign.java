@@ -1,5 +1,6 @@
 package kz.growit.smartservice;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -20,6 +23,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.NetworkImageView;
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.mikepenz.materialdrawer.Drawer;
 import com.rey.material.widget.Spinner;
 import com.rey.material.widget.EditText;
@@ -50,11 +55,12 @@ public class SearchNewDesign extends AppCompatActivity {
     private ListView searchResultsLV;
     private com.dd.CircularProgressButton searchButton;
     private EditText searchQuery;
+    private int SelectedIntentId = 0;
+    private int SelectedCatPos = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final Toolbar toolbar;
-        Drawer drawer;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_new_design);
@@ -66,6 +72,11 @@ public class SearchNewDesign extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         } catch (java.lang.NullPointerException e) {
             e.printStackTrace();
+        }
+
+        if (getIntent().hasExtra("catId")) {
+            Snackbar.make(toolbar, AppController.getInstance().getServiceCategories().get(getIntent().getExtras().getInt("catId")).getDescription(), Snackbar.LENGTH_LONG).show();
+            SelectedIntentId = getIntent().getExtras().getInt("catId");
         }
 
         SelectedRegionId = myApp.getSelectedRegionId();
@@ -85,7 +96,7 @@ public class SearchNewDesign extends AppCompatActivity {
             regionName.setText(region);
         }
 
-        drawer = myApp.getDrawer(SearchNewDesign.this, toolbar);
+        Drawer drawer = myApp.getDrawer(SearchNewDesign.this, toolbar);
 
         category = (Spinner) findViewById(R.id.categorySpinnerSearchNewDesign);
 
@@ -99,10 +110,11 @@ public class SearchNewDesign extends AppCompatActivity {
             }
         });
 
-        category = (Spinner) findViewById(R.id.categorySpinnerSearchNewDesign);
-
         for (int i = 0; i < kats.size(); i++) {
             cats.add(kats.get(i).getDescription());
+            if ((SelectedIntentId > 0) && (kats.get(i).getId() == SelectedIntentId)) {
+                SelectedCatPos = i;
+            }
         }
 
 
@@ -117,8 +129,18 @@ public class SearchNewDesign extends AppCompatActivity {
                 return true;
             }
         });
+
         SelectedCategoryId = kats.get(0).getId();
         myApp.setSelectedCategoryId(SelectedCategoryId);
+
+        if (SelectedCatPos > -1) {
+            category.setSelection(SelectedCatPos);
+            SelectedCategoryId = SelectedIntentId;
+            myApp.setSelectedCategoryId(SelectedIntentId);
+            searchButton.setIndeterminateProgressMode(true);
+            searchButton.setProgress(50);
+            searchNow();
+        }
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +151,7 @@ public class SearchNewDesign extends AppCompatActivity {
             }
         });
 
+
         searchQuery.clearFocus();
 
         searchResultsLV = (ListView) findViewById(R.id.searchResultsListView);
@@ -138,6 +161,7 @@ public class SearchNewDesign extends AppCompatActivity {
         searchResultsLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                YoYo.with(Techniques.Tada).duration(400).playOn(view);
                 Drawable drawable;
                 NetworkImageView thumb = (NetworkImageView) view.findViewById(R.id.thumbnailSearchItemRow);
                 try {
@@ -153,6 +177,8 @@ public class SearchNewDesign extends AppCompatActivity {
                 startActivity(goToProfileDetailView);
             }
         });
+        // hide kb
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     private void searchNow() {

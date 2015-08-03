@@ -14,9 +14,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.lid.lib.LabelView;
+import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import org.json.JSONArray;
@@ -45,6 +48,7 @@ public class AppController extends Application {
     private static AppController mInstance;
     private RequestQueue mRequestQueue;
     private Drawable profileDrawable;
+    public String SMART_SERVICE_URL = "http://smartservice.kz/";
     private String language = "ru";
     private ArrayList<SearchResultItem> recentSearch;
     private Boolean isLoggedIn;
@@ -214,9 +218,12 @@ public class AppController extends Application {
                         // 2 findRequest
                         new PrimaryDrawerItem().withIdentifier(2).withName(getResources().getString(R.string.drawer_item_find_request_ru)).withIcon(getResources().getDrawable(R.drawable.magnify)),
                         // 3 addRequest
-                        new PrimaryDrawerItem().withIdentifier(3).withName(getResources().getString(R.string.drawer_item_add_request_ru)).withIcon(getResources().getDrawable(R.drawable.pen))
-                        //,
-
+                        new PrimaryDrawerItem().withIdentifier(3).withName(getResources().getString(R.string.drawer_item_add_request_ru)).withIcon(getResources().getDrawable(R.drawable.pen)),
+                        // 5 register
+                        //new PrimaryDrawerItem().withIdentifier(5).withName(getResources().getString(R.string.register_button_ru)).withIcon(FontAwesome.Icon.faw_pencil_square_o),
+                        new PrimaryDrawerItem().withIdentifier(6).withName(activity.getResources().getString(R.string.reports_ru)).withIcon(FontAwesome.Icon.faw_bar_chart),
+                        new DividerDrawerItem(),
+                        new SecondaryDrawerItem().withIdentifier(15).withIcon(FontAwesome.Icon.faw_android).withName(getResources().getString(R.string.about_developers_ru))
                         //     new SectionDrawerItem().withName(getResources().getString(R.string.section_my_profile_ru)),
                         // 4 myRequests
                         //       new PrimaryDrawerItem().withIdentifier(4).withName(getResources().getString(R.string.drawer_item_my_requests_ru)).withIcon(getResources().getDrawable(R.drawable.file_document))
@@ -227,7 +234,7 @@ public class AppController extends Application {
                         int id = iDrawerItem.getIdentifier();
                         switch (id) {
                             case 0:
-                                Intent goToMain = new Intent(activity, MainMenu.class);
+                                Intent goToMain = new Intent(activity, LargeButtons.class);
                                 goToMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 activity.startActivity(goToMain);
                                 return true;
@@ -237,13 +244,29 @@ public class AppController extends Application {
                                 activity.startActivity(goToOfferRequest);
                                 return true;
                             case 2:
-                                Intent goToSearch = new Intent(activity, Search.class);
+                                Intent goToSearch = new Intent(activity, SelectCategoryActivity.class);
                                 goToSearch.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 activity.startActivity(goToSearch);
+                                return true;
                             case 3:
                                 Intent goToAddRequest = new Intent(activity, AddRequestActivity.class);
                                 goToAddRequest.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 activity.startActivity(goToAddRequest);
+                                return true;
+                            case 5:
+                                Intent goToRegister = new Intent(activity, RegisterActivity.class);
+                                goToRegister.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                activity.startActivity(goToRegister);
+                                return true;
+                            case 6:
+                                Intent goToReports = new Intent(activity, ReportNewUsers.class);
+                                goToReports.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                activity.startActivity(goToReports);
+                                return true;
+                            case 15:
+                                Intent goToAboutDevs = new Intent(activity, AboutDevs.class);
+                                goToAboutDevs.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                activity.startActivity(goToAboutDevs);
                             default:
                                 return true;
                         }
@@ -301,8 +324,9 @@ public class AppController extends Application {
     public String daysFromDate(Date date) {
         Date today = new Date();
         String response;
+        long days = 0;
 
-        int between = (int) ((int) today.getTime() - date.getTime());
+        long between = today.getTime() - date.getTime();
         between = between / (1000 * 60);
         response = "мин. назад";
         if (between > 59) {
@@ -310,7 +334,17 @@ public class AppController extends Application {
             response = "час. назад";
             if (between > 24) {
                 between = between / 24;
+                days = between;
                 response = "дн. назад";
+                if (between > 7) {
+                    between = between / 7;
+                    response = "нед. назад";
+                    if (days > 30) {
+                        days = days / 30;
+                        between = days;
+                        response = "мес. назад";
+                    }
+                }
             }
         }
 
@@ -357,11 +391,18 @@ public class AppController extends Application {
 
     public Date fromServerStringToDate(String serverDate) {
         //"ProfileUpdateDate": "2015-06-04T20:38:25.967"
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
+        SimpleDateFormat df;
+        if (serverDate.length() == 23)
+            df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
+        else if (serverDate.length() == 22)
+            df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SS");
+        else
+            df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         try {
             return df.parse(serverDate);
         } catch (ParseException e) {
             e.printStackTrace();
+            String str = e.getLocalizedMessage();
             return null;
         }
     }

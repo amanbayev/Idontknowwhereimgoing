@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="2dp"
+    android:orientation="horizontal">
+    <com.rey.material.widget.CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        style="@style/Material.Drawable.CheckBox"
+        android:focusable="false"
+        android:layout_gravity="center_vertical"
+        android:focusableInTouchMode="false"
+        android:id="@+id/checkboxListViewItemCheckBox"/>
+    <com.rey.material.widget.TextView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/checkboxListViewItemText"
+        android:text="option text"
+        android:layout_height="wrap_content" />
+</LinearLayout>

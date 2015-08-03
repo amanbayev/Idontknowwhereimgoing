@@ -52,11 +52,11 @@
                         android:layout_marginTop="10dp"
                         android:gravity="center"
                         custom:selected_color="#0095BF"
-                        custom:selected_drawable="@drawable/rsz_ss_symbol"
-                        custom:selected_height="6dp"
-                        custom:selected_padding_left="6dp"
-                        custom:selected_padding_right="6dp"
-                        custom:selected_width="6dp"
+                        custom:selected_drawable="@drawable/rsz_1rsz_ss_symbol"
+                        custom:selected_height="18dp"
+                        custom:selected_padding_left="2dp"
+                        custom:selected_padding_right="2dp"
+                        custom:selected_width="13dp"
                         custom:shape="oval"
                         custom:unselected_color="#55333333"
                         custom:unselected_height="6dp"
@@ -73,9 +73,10 @@
 
                     <com.github.siyamed.shapeimageview.CircularImageView
                         android:id="@+id/thumbProfileDetailView"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
                         android:layout_marginLeft="20dp"
+                        android:padding="20dp"
                         android:layout_marginStart="20dp"
                         app:siBorderColor="@color/primary_dark"
                         app:siBorderWidth="4dp" />
@@ -228,8 +229,8 @@
                         android:id="@+id/aboutProfileTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="60dp"
-                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
                         android:text="Информация о профиле" />
                 </LinearLayout>
 

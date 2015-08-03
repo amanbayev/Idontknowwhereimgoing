@@ -79,4 +79,24 @@
     <string name="show_reviews_ru">Показать отзывы</string>
     <string name="show_pictures_ru">Показать фотографии</string>
     <string name="title_activity_show_ratings">ShowRatings</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="other_phones_ru">Другие телефоны</string>
+    <string name="education_hint_ru">Образование</string>
+    <string name="distrcits_ru">Район</string>
+    <string name="registration_form_ru">Форма регистрации</string>
+    <string name="send_registration_form_ru">Отправить форму</string>
+    <string name="title_activity_report_new_users">ReportNewUsers</string>
+    <string name="reports_ru">Отчеты</string>
+    <string name="report_new_users_title_ru">Отчет по количеству зарегистрированных пользователей в разрезе дней. Попробуйте провести пальцами для изменения масштаба и перемещения отчета.</string>
+    <string name="no_data_for_report_ru">Данные для отчета еще не загружены</string>
+    <string name="loading_regid_ru">Регистрация устройства на сервере</string>
+    <string name="title_activity_select_category">SelectCategoryActivity</string>
+    <string name="select_category_ru">Выберите категорию</string>
+    <string name="all_categories_ru">Все категории</string>
+    <string name="title_activity_image_gallery">ImageGallery</string>
+    <string name="title_activity_about_devs">AboutDevs</string>
+    <string name="about_developers_ru">О приложении</string>
+    <string name="send_contact_form_ru">Отправить разработчикам</string>
+    <string name="send_contact_form_ok_ru">Отправлено! Спасибо!</string>
+    <string name="send_contact_form_bad_ru">Не удалось отправить. Ошибка подключения к сети.</string>
 </resources>

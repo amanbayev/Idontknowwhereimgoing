@@ -3,6 +3,7 @@ package kz.growit.smartservice;
 import android.content.Intent;
 import android.content.pm.LabeledIntent;
 import android.graphics.Color;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -47,36 +48,40 @@ public class LargeButtons extends AppCompatActivity {
         offerLL = (LinearLayout) findViewById(R.id.offerServiceLargeButtonLL);
         searchLL = (LinearLayout) findViewById(R.id.searchLargeButtonLL);
         profileLL = (LinearLayout) findViewById(R.id.myProfileLargeButtonLL);
-
-        final TextView footer = (TextView) findViewById(R.id.footerText);
-
+        
+        final View content = findViewById(R.id.coordinatorLargeButtons);
         addLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                footer.setText("Add clicked");
+                Intent goToAddRequest = new Intent(LargeButtons.this, AddRequestActivity.class);
+                goToAddRequest.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(goToAddRequest);
             }
         });
 
         offerLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                footer.setText("offer clicked");
+                Snackbar.make(content,"Функционал в разработке. " +
+                        "Пока можете воспользоваться веб-сайтом SmartService.kz", Snackbar.LENGTH_LONG)
+                        .show();
             }
         });
 
         searchLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToNewDesignSearch = new Intent(LargeButtons.this, SearchNewDesign.class);
-                goToNewDesignSearch.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(goToNewDesignSearch);
+                Intent goToSelectCategory = new Intent(LargeButtons.this, SelectCategoryActivity.class);
+                goToSelectCategory.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(goToSelectCategory);
             }
         });
 
         profileLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                footer.setText("Profile clicked");
+                Snackbar.make(content,"Функционал в разработке. " +
+                        "Пока можете воспользоваться веб-сайтом SmartService.kz", Snackbar.LENGTH_LONG).show();
             }
         });
     }
